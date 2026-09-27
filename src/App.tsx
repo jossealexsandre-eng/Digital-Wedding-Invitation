@@ -2189,11 +2189,8 @@ export default function App() {
                       className="inline-flex items-center gap-2.5 px-6 py-2.5 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCB045] hover:opacity-95 text-white text-xs uppercase tracking-widest2 font-semibold rounded-full shadow-md transition-all cursor-pointer"
                     >
                       <Instagram className="w-3.5 h-3.5" />
-                      <span>Share on Your Story Instagram</span>
+                      <span>Share on Your Instagram Story</span>
                     </button>
-                    <span className="text-[11px] text-[#8C7F6E] italic">
-                      Bagikan template 9:16 elegan ke Instagram Story Anda
-                    </span>
                   </div>
 
                   <button
@@ -2250,7 +2247,7 @@ export default function App() {
                   )}
                 </button>
                 <span className="hidden sm:inline text-[11px] text-[#A89B8A] italic">
-                  (Arahkan kursor atau sentuh kartu untuk membaca dengan tenang)
+                  (Hover or tap cards to pause and read)
                 </span>
               </div>
             </div>
@@ -2341,7 +2338,7 @@ export default function App() {
                       htmlFor="wishName"
                       className="block text-xs uppercase tracking-widest text-[#252321]/80 mb-2 font-medium"
                     >
-                      Nama Anda *
+                      Your Name *
                     </label>
                     <input
                       id="wishName"
@@ -2359,7 +2356,7 @@ export default function App() {
                       htmlFor="wishText"
                       className="block text-xs uppercase tracking-widest text-[#252321]/80 mb-2 font-medium"
                     >
-                      Pesan &amp; Doa *
+                      Wishes &amp; Blessings *
                     </label>
                     <textarea
                       id="wishText"
@@ -2367,7 +2364,7 @@ export default function App() {
                       required
                       value={wishInput.text}
                       onChange={(e) => setWishInput({ ...wishInput, text: e.target.value })}
-                      placeholder="Tuliskan ucapan dan doa tulus Anda..."
+                      placeholder="Write your heartfelt wishes and blessings..."
                       className="w-full px-4 py-2 bg-[#F7F3ED] border border-[#D8C6A8]/60 text-sm text-[#252321] focus:outline-none focus:border-[#252321] resize-none"
                     />
                   </div>
@@ -2380,12 +2377,12 @@ export default function App() {
                     onMouseLeave={() => setCursorHoverType('')}
                     className="w-full sm:w-auto px-7 py-3 bg-[#252321] text-[#F7F3ED] text-xs uppercase tracking-widest2 font-medium hover:bg-[#A38755] transition-colors cursor-pointer active:scale-95"
                   >
-                    Kirim Ucapan
+                    Send Wishes
                   </button>
 
                   {wishSubmitted && (
                     <p className="text-xs text-[#A38755] text-center italic font-serif">
-                      ✦ Terima kasih! Ucapan Anda telah ditambahkan ke kartu berjalan.
+                      ✦ Thank you! Your warm wishes have been added to our guestbook.
                     </p>
                   )}
                 </div>
@@ -2500,16 +2497,16 @@ export default function App() {
                 onMouseEnter={() => setCursorHoverType('pointer')}
                 onMouseLeave={() => setCursorHoverType('')}
                 className="group relative inline-flex items-center gap-3 px-8 py-3.5 bg-gradient-to-r from-[#FAF7F2]/15 via-[#FAF7F2]/10 to-[#FAF7F2]/15 hover:from-[#D8C6A8] hover:to-[#B59A6A] hover:text-[#252321] text-[#FAF7F2] border border-[#D8C6A8]/60 hover:border-[#D8C6A8] rounded-full text-xs uppercase tracking-widest2 font-semibold transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#D8C6A8]"
-                aria-label="Share on Your Story Instagram"
+                aria-label="Share on Instagram Story"
               >
                 <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-[#FD1D1D] via-[#E1306C] to-[#833AB4] flex items-center justify-center text-white shrink-0 shadow-xs group-hover:scale-105 transition-transform">
                   <Instagram className="w-3 h-3 text-white" />
                 </div>
-                <span>Share on Your Story Instagram</span>
+                <span>Share on Your Instagram Story</span>
               </button>
 
               <p className="text-[11px] text-[#A89B8A] italic max-w-md text-center">
-                Template 9:16 siap pakai • Kolom nama tamu dapat diisi manual di Instagram Story
+                Share our special day with loved ones on your Instagram Story
               </p>
 
               {shareToast && (

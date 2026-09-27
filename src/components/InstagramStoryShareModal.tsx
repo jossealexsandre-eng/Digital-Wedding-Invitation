@@ -227,7 +227,7 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
       // "Kepada Yth. / Dear:"
       ctx.font = 'italic 400 32px "Playfair Display", Georgia, serif';
       ctx.fillStyle = isNoir ? '#FAF7F2' : '#252321';
-      ctx.fillText('Dear / Kepada Yth.', 540, boxY + 120);
+      ctx.fillText('Dear Valued Guest', 540, boxY + 120);
 
       // Elegant Underline / Line for Manual Name Writing in IG Stories
       const lineY = boxY + 200;
@@ -243,7 +243,7 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
       // Friendly subtle hint for Instagram Text tool
       ctx.font = 'italic 400 22px Montserrat, -apple-system, sans-serif';
       ctx.fillStyle = isNoir ? 'rgba(216, 198, 168, 0.75)' : 'rgba(140, 127, 110, 0.8)';
-      ctx.fillText('( Tulis nama tamu / mention @tamu di Instagram Story )', 540, boxY + 265);
+      ctx.fillText('( Write guest name / mention @guest on your Story )', 540, boxY + 265);
 
       // 7. INSTAGRAM STORY "LINK STICKER" AREA
       const stickerY = 1240;
@@ -266,15 +266,15 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
       // Link Sticker Icon & Label
       ctx.font = '600 20px Montserrat, -apple-system, sans-serif';
       ctx.fillStyle = isNoir ? '#D8C6A8' : '#B59A6A';
-      ctx.fillText('🔗 TEMPATKAN STIKER TAUTAN DI SINI', 540, stickerY + 68);
+      ctx.fillText('🔗 PLACE LINK STICKER HERE', 540, stickerY + 68);
 
       ctx.font = 'italic 300 36px "Playfair Display", Georgia, serif';
       ctx.fillStyle = isNoir ? '#FAF7F2' : '#252321';
-      ctx.fillText('Buka Undangan Pernikahan', 540, stickerY + 130);
+      ctx.fillText('Open Wedding Invitation', 540, stickerY + 130);
 
       ctx.font = '500 22px Montserrat, -apple-system, sans-serif';
       ctx.fillStyle = isNoir ? 'rgba(216, 198, 168, 0.85)' : 'rgba(115, 107, 99, 0.9)';
-      ctx.fillText('Ketuk stiker link untuk konfirmasi kehadiran & detail acara', 540, stickerY + 190);
+      ctx.fillText('Tap link sticker to view invitation & RSVP', 540, stickerY + 190);
 
       // 8. Bottom Hashtag & Decorative Footer
       ctx.font = 'italic 400 30px "Playfair Display", Georgia, serif';
@@ -283,7 +283,7 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
 
       ctx.font = '300 20px Montserrat, -apple-system, sans-serif';
       ctx.fillStyle = isNoir ? '#8C7F6E' : '#A89B8A';
-      ctx.fillText('Merupakan suatu kehormatan atas kehadiran & doa restu Anda', 540, 1675);
+      ctx.fillText('The honor of your presence and blessings is requested', 540, 1675);
 
       // Tiny bottom luxury crest line
       ctx.strokeStyle = isNoir ? 'rgba(216, 198, 168, 0.3)' : 'rgba(181, 154, 106, 0.35)';
@@ -345,7 +345,7 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
           text: `You are cordially invited to celebrate our wedding! ${invitationUrl}`,
           files: [storyFile],
         });
-        setShareSuccess('Berhasil dibagikan ke Instagram Story!');
+        setShareSuccess('Successfully shared to Instagram Story!');
         setTimeout(() => setShareSuccess(null), 4000);
         setIsGenerating(false);
         return;
@@ -370,7 +370,7 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
       }, 1000);
     }, 600);
 
-    setShareSuccess('Template diunduh & tautan disalin! Buka Instagram untuk membuat Story.');
+    setShareSuccess('Story card saved & link copied! Open Instagram to share.');
     setTimeout(() => setShareSuccess(null), 5000);
     setIsGenerating(false);
   };
@@ -385,7 +385,7 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
     link.click();
     document.body.removeChild(link);
 
-    setShareSuccess('Template Story HD berhasil diunduh ke perangkat Anda!');
+    setShareSuccess('HD Story card downloaded to your device!');
     setTimeout(() => setShareSuccess(null), 3500);
   };
 
@@ -424,10 +424,10 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
             </div>
             <div>
               <h3 id="modal-title" className="font-serif text-lg font-medium text-[#252321]">
-                Share on Your Story Instagram
+                Share on Instagram Story
               </h3>
               <p className="text-[11px] text-[#8C7F6E]">
-                Template 9:16 siap pasang dengan nama tamu yang dapat Anda isi langsung di Instagram
+                Share this elegant wedding card directly to your Instagram Story
               </p>
             </div>
           </div>
@@ -435,7 +435,7 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
           <button
             onClick={onClose}
             className="p-2 rounded-full text-[#8C7F6E] hover:text-[#252321] hover:bg-[#D8C6A8]/20 transition-colors cursor-pointer"
-            aria-label="Tutup"
+            aria-label="Close"
           >
             <X className="w-5 h-5" />
           </button>
@@ -485,12 +485,12 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
                 {isGenerating ? (
                   <div className="flex flex-col items-center gap-2 text-xs text-[#8C7F6E]">
                     <div className="w-6 h-6 border-2 border-[#D8C6A8] border-t-transparent rounded-full animate-spin" />
-                    <span>Menyiapkan template...</span>
+                    <span>Preparing story card...</span>
                   </div>
                 ) : previewDataUrl ? (
                   <img
                     src={previewDataUrl}
-                    alt="Instagram Story Template Preview"
+                    alt="Instagram Story Preview"
                     className="w-full h-full object-cover select-none"
                   />
                 ) : null}
@@ -501,7 +501,7 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
             </div>
 
             <span className="text-[10px] text-[#8C7F6E] mt-2 italic">
-              Resolusi HD 1080 × 1920 (Ukuran Resmi Instagram Story)
+              High Resolution 1080 × 1920 (Instagram Story Size)
             </span>
           </div>
 
@@ -511,24 +511,24 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
             <div className="p-4 bg-[#F2EDE4] rounded-xl border border-[#D8C6A8]/50 space-y-3">
               <div className="flex items-center gap-2 text-xs uppercase tracking-widest2 font-semibold text-[#8C7F6E]">
                 <Sparkles className="w-3.5 h-3.5 text-[#B59A6A]" />
-                <span>Petunjuk Mudah Berbagi</span>
+                <span>Quick Sharing Guide</span>
               </div>
               <ul className="text-xs text-[#59524A] space-y-2 leading-relaxed">
                 <li className="flex items-start gap-2">
                   <span className="font-bold text-[#B59A6A] shrink-0">1.</span>
                   <span>
-                    <strong>Nama Dikosongkan:</strong> Bagian nama tamu sengaja dibuat kosong agar
-                    Anda leluasa mengetik nama teman atau menambahkan mention{' '}
+                    <strong>Guest Name Area:</strong> The guest name space is left open so you can freely
+                    type names or tag friends{' '}
                     <code className="bg-[#FAF7F2] px-1 rounded text-[#252321]">@username</code>{' '}
-                    menggunakan fitur teks Instagram Story.
+                    using Instagram Story's text tool.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-bold text-[#B59A6A] shrink-0">2.</span>
                   <span>
-                    <strong>Stiker Link:</strong> Di Instagram Story, pilih menu Stiker lalu pilih{' '}
-                    <code className="bg-[#FAF7F2] px-1 rounded text-[#252321]">Link / Tautan</code>{' '}
-                    dan tempel tautan undangan kami agar tamu bisa langsung membukanya.
+                    <strong>Link Sticker:</strong> On Instagram Story, open the Stickers menu, select{' '}
+                    <code className="bg-[#FAF7F2] px-1 rounded text-[#252321]">Link</code>,{' '}
+                    and paste our invitation link so guests can tap and RSVP instantly.
                   </span>
                 </li>
               </ul>
@@ -551,18 +551,18 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
                 className="w-full py-3.5 px-5 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCB045] hover:opacity-95 text-white rounded-xl text-xs uppercase tracking-widest2 font-semibold flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all cursor-pointer"
               >
                 <Instagram className="w-4 h-4" />
-                <span>Buka &amp; Bagikan ke Instagram Story</span>
+                <span>Share to Instagram Story</span>
               </button>
 
               {/* Button 2 & 3 in grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* Download Template HD */}
+                {/* Download Story Card */}
                 <button
                   onClick={handleDownloadImage}
                   className="py-3 px-4 bg-[#FAF7F2] hover:bg-[#F2EDE4] text-[#252321] border border-[#D8C6A8] rounded-xl text-xs font-medium flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
                   <Download className="w-3.5 h-3.5 text-[#B59A6A]" />
-                  <span>Unduh Template HD</span>
+                  <span>Download Story Card</span>
                 </button>
 
                 {/* Copy Invitation Link */}
@@ -573,12 +573,12 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
                   {copiedLink ? (
                     <>
                       <Check className="w-3.5 h-3.5 text-green-600" />
-                      <span className="text-green-700">Tautan Tersalin!</span>
+                      <span className="text-green-700">Link Copied!</span>
                     </>
                   ) : (
                     <>
                       <Copy className="w-3.5 h-3.5 text-[#B59A6A]" />
-                      <span>Salin Link Undangan</span>
+                      <span>Copy Invitation Link</span>
                     </>
                   )}
                 </button>
@@ -589,7 +589,7 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
                 onClick={handleOpenInstagramApp}
                 className="w-full py-2.5 text-center text-xs text-[#8C7F6E] hover:text-[#252321] underline flex items-center justify-center gap-1 cursor-pointer"
               >
-                <span>Buka aplikasi Instagram langsung</span>
+                <span>Open Instagram App</span>
                 <ExternalLink className="w-3 h-3" />
               </button>
             </div>
@@ -599,3 +599,4 @@ export const InstagramStoryShareModal: React.FC<InstagramStoryShareModalProps> =
     </div>
   );
 };
+

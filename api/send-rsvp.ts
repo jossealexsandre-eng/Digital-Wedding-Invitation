@@ -21,7 +21,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (!data.name || !data.email) {
       return res.status(400).json({
         success: false,
-        error: 'Nama dan email wajib diisi.',
+        error: 'Name and email are required.',
       });
     }
 
@@ -31,7 +31,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     console.error('[RSVP Vercel API Error]:', err);
     return res.status(500).json({
       success: false,
-      error: err?.message || 'Gagal mengirim email RSVP.',
+      error: err?.message || 'Failed to send RSVP confirmation email.',
     });
   }
 }

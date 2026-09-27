@@ -312,7 +312,7 @@ export async function sendRsvpEmail(rsvp: RsvpPayload): Promise<{
       success: true,
       simulated: true,
       message:
-        'Konfigurasi email belum diisi di file .env. Data RSVP tersimpan (mode simulasi). Masukkan email dan App Password Gmail di file .env agar email langsung terkirim!',
+        'Email configuration is missing in .env. RSVP saved (simulation mode). Please configure SMTP_USER and SMTP_PASS in .env to send live emails.',
     };
   }
 
@@ -365,6 +365,6 @@ export async function sendRsvpEmail(rsvp: RsvpPayload): Promise<{
 
   return {
     success: true,
-    message: `Konfirmasi RSVP berhasil dikirim ke ${rsvp.email}!`,
+    message: `RSVP confirmation successfully sent to ${rsvp.email}!`,
   };
 }

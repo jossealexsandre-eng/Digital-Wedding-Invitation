@@ -20,7 +20,7 @@ app.post('/api/send-rsvp', async (req, res) => {
     if (!data.name || !data.email) {
       return res.status(400).json({
         success: false,
-        error: 'Nama dan email wajib diisi.',
+        error: 'Name and email are required.',
       });
     }
 
@@ -30,7 +30,7 @@ app.post('/api/send-rsvp', async (req, res) => {
     console.error('[RSVP Server Error]:', err);
     return res.status(500).json({
       success: false,
-      error: err?.message || 'Gagal mengirim email RSVP.',
+      error: err?.message || 'Failed to send RSVP confirmation email.',
     });
   }
 });
